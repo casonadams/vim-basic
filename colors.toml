@@ -1,0 +1,23 @@
+foreground = "#bbbbbb"
+background = "#2b2b2b"
+visual = "#214283"
+
+[normal]
+black = "#423D3C"
+red = "#DB5451"
+green = "#548C26"
+yellow = "#A89022"
+blue = "#3A91CF"
+magenta = "#A575BA"
+cyan = "#009191"
+white = "#7A7A7A"
+
+[bright]
+black = "#4F4F4F"
+red = "#FF5452"
+green = "#61AB11"
+yellow = "#FFFF00"
+blue = "#1EA0FC"
+magenta = "#E55CE5"
+cyan = "#00FFFF"
+white = "#FFFFFF"

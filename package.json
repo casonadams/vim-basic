@@ -1,0 +1,24 @@
+{
+  "name": "darcula",
+  "version": "1.0.0",
+  "description": "![darcula](./img/full_screen.png)",
+  "main": "convert.js",
+  "dependencies": {
+    "chalk": "^4.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/casonadams/darcula.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/casonadams/darcula/issues"
+  },
+  "homepage": "https://github.com/casonadams/darcula#readme"
+}
