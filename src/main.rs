@@ -6,26 +6,23 @@ use std::path::Path;
 use std::error::Error;
 use tinytemplate::TinyTemplate;
 
-#[derive(Serialize)]
-struct Context {
-    foreground: String,
-    visual: String,
-}
+mod logging;
 
-#[derive(Serialize)]
-struct Object {
-    name: String,
-    gui: String,
-    fg: String,
-    bg: String,
-}
+const TEST: &str = "";
 
 #[derive(Deserialize, Serialize)]
 struct Template {
+    light: Scheme,
+    dark: Scheme,
+}
+
+#[derive(Deserialize, Serialize)]
+struct Scheme {
     foreground: String,
     background: String,
-    visual: String,
+    operator: String,
     normal: Colors,
+    terminal: TermColors,
     bright: Colors,
 }
 
@@ -41,7 +38,28 @@ struct Colors {
     white: String,
 }
 
+#[derive(Deserialize, Serialize)]
+struct TermColors {
+    color_00: String,
+    color_01: String,
+    color_02: String,
+    color_03: String,
+    color_04: String,
+    color_05: String,
+    color_06: String,
+    color_07: String,
+    color_08: String,
+    color_09: String,
+    color_10: String,
+    color_11: String,
+    color_12: String,
+    color_13: String,
+    color_14: String,
+    color_15: String,
+}
+
 fn main() -> Result<(), Box<dyn Error>> {
+    logging::init_logging();
     let mut tt = TinyTemplate::new();
     let s = read_file_to_string("template.vim");
     let t = read_file_to_string("colors.toml");
@@ -49,15 +67,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     tt.add_template("vim", &s)?;
 
-    let context = Template {
-        foreground: c.foreground,
-        background: c.background,
-        visual: c.visual,
-        normal: c.normal,
-        bright: c.bright,
-    };
-
-    let rendered = tt.render("vim", &context)?;
+    let rendered = tt.render("vim", &c)?;
     println!("{}", rendered);
 
     Ok(())

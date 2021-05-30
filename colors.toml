@@ -1,8 +1,70 @@
-foreground = "#bbbbbb"
+[dark]
 background = "#2b2b2b"
-visual = "#214283"
+foreground = "#a9b7c6"
+operator = "#CC7832"
 
-[normal]
+[dark.terminal]
+color_00 = "#ffffff"
+color_01 = "#ffffff"
+color_02 = "#ffffff"
+color_03 = "#ffffff"
+color_04 = "#ffffff"
+color_05 = "#ffffff"
+color_06 = "#ffffff"
+color_07 = "#ffffff"
+color_08 = "#ffffff"
+color_09 = "#ffffff"
+color_10 = "#ffffff"
+color_11 = "#ffffff"
+color_12 = "#ffffff"
+color_13 = "#ffffff"
+color_14 = "#ffffff"
+color_15 = "#ffffff"
+
+[dark.normal]
+black = "#3C3C3C"
+red = "#CC7832"
+green = "#6A8759"
+yellow = "#BBB529"
+blue = "#6897BB"
+magenta = "#9876aa"
+cyan = "#20999D"
+white = "#808080"
+
+[dark.bright]
+black = "#ffffff"
+red = "#ffffff"
+green = "#629755"
+yellow = "#FFC66D"
+blue = "#4EADE5"
+magenta = "#ffffff"
+cyan = "#ffffff"
+white = "#ffffff"
+
+[light]
+background = "#2b2b2b"
+foreground = "#ffffff"
+operator = "#af3a03"
+
+[light.terminal]
+color_00 = "#ffffff"
+color_01 = "#ffffff"
+color_02 = "#ffffff"
+color_03 = "#ffffff"
+color_04 = "#ffffff"
+color_05 = "#ffffff"
+color_06 = "#ffffff"
+color_07 = "#ffffff"
+color_08 = "#ffffff"
+color_09 = "#ffffff"
+color_10 = "#ffffff"
+color_11 = "#ffffff"
+color_12 = "#ffffff"
+color_13 = "#ffffff"
+color_14 = "#ffffff"
+color_15 = "#ffffff"
+
+[light.normal]
 black = "#423D3C"
 red = "#DB5451"
 green = "#548C26"
@@ -12,7 +74,7 @@ magenta = "#A575BA"
 cyan = "#009191"
 white = "#7A7A7A"
 
-[bright]
+[light.bright]
 black = "#4F4F4F"
 red = "#FF5452"
 green = "#61AB11"
