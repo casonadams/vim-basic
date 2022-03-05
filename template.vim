@@ -1,5 +1,13 @@
-hi clear
+if exists("g:basic")
+  finish
+endif
+let g:basic = 1
 
+if (has("termguicolors"))
+    set termguicolors
+endif
+
+highlight clear
 if exists("syntax_on")
   syntax reset
 endif
@@ -239,23 +247,28 @@ if &background ==# 'dark'
       let g:indentLine_color_gui = '{dark.normal.black}'
     endif
     hi LspDiagnosticsDefaultError guifg={dark.normal.red} guibg=NONE gui=NONE cterm=NONE
-    hi LspDiagnosticsSignError guifg={dark.normal.red} guibg={dark.background} gui=NONE cterm=NONE
-    hi LspDiagnosticsUnderlineError guifg={dark.normal.red} guibg=NONE guisp={dark.normal.red} gui=undercurl cterm=underline
+    hi LspDiagnosticsErrorFloating guifg={dark.normal.red} guibg=NONE gui=NONE cterm=NONE
+    hi LspDiagnosticsSignError guifg={dark.normal.red} guibg=NONE gui=NONE cterm=NONE
+    hi LspDiagnosticsUnderlineError guifg={dark.normal.red} guibg=NONE gui=NONE cterm=NONE
+
     hi LspDiagnosticsDefaultWarning guifg={dark.bright.yellow} guibg=NONE gui=NONE cterm=NONE
-    hi LspDiagnosticsSignWarning guifg={dark.bright.yellow} guibg={dark.normal.black} gui=NONE cterm=NONE
+    hi LspDiagnosticsSignWarning guifg={dark.bright.yellow} guibg=NONE gui=NONE cterm=NONE
     hi LspDiagnosticsUnderlineWarning guifg={dark.bright.yellow} guibg=NONE guisp={dark.bright.yellow} gui=undercurl cterm=underline
+
     hi LspDiagnosticsDefaultInformation guifg={dark.normal.blue} guibg=NONE gui=NONE cterm=NONE
-    hi LspDiagnosticsSignInformation guifg={dark.normal.blue} guibg={dark.normal.black} gui=NONE cterm=NONE
+    hi LspDiagnosticsSignInformation guifg={dark.normal.blue} guibg=NONE gui=NONE cterm=NONE
     hi LspDiagnosticsUnderlineInformation guifg={dark.normal.blue} guibg=NONE guisp={dark.normal.blue} gui=undercurl cterm=underline
+
     hi LspDiagnosticsDefaultHint guifg={dark.normal.cyan} guibg=NONE gui=NONE cterm=NONE
-    hi LspDiagnosticsSignHint guifg={dark.normal.cyan} guibg={dark.normal.black} gui=NONE cterm=NONE
+    hi LspDiagnosticsSignHint guifg={dark.normal.cyan} guibg=NONE gui=NONE cterm=NONE
     hi LspDiagnosticsUnderlineHint guifg={dark.normal.cyan} guibg=NONE guisp={dark.normal.cyan} gui=undercurl cterm=underline
+
     hi LanguageClientError guifg={dark.normal.red} guibg=NONE gui=NONE cterm=NONE
-    hi LanguageClientErrorSign guifg={dark.normal.red} guibg={dark.background} gui=NONE cterm=NONE
+    hi LanguageClientErrorSign guifg={dark.normal.red} guibg=NONE gui=NONE cterm=NONE
     hi LanguageClientWarning guifg={dark.bright.yellow} guibg=NONE gui=NONE cterm=NONE
-    hi LanguageClientWarningSign guifg={dark.bright.yellow} guibg={dark.normal.black} gui=NONE cterm=NONE
+    hi LanguageClientWarningSign guifg={dark.bright.yellow} guibg=NONE gui=NONE cterm=NONE
     hi LangaugeClientInfo guifg={dark.normal.blue} guibg=NONE gui=NONE cterm=NONE
-    hi LanguageClientInfoSign guifg={dark.normal.blue} guibg={dark.normal.black} gui=NONE cterm=NONE
+    hi LanguageClientInfoSign guifg={dark.normal.blue} guibg=NONE gui=NONE cterm=NONE
     hi LanguageClientCodeLens guifg={dark.normal.blue} guibg=NONE gui=NONE cterm=NONE
     hi NERDTreeDir guifg={dark.normal.cyan} guibg=NONE gui=NONE cterm=NONE
     hi NERDTreeDirSlash guifg={dark.normal.cyan} guibg=NONE gui=NONE cterm=NONE
@@ -1668,4 +1681,3 @@ if get(g:, "basic_filetype_hi_groups", 0)
   endif
 endif
 unlet s:t_Co s:italics
-finish

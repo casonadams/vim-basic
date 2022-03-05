@@ -14,7 +14,7 @@ pub enum Flag {
 
 const QUALITY: Flag = Flag::Good;
 
-struct Table<const N: usize>([[i32; N]; N])
+struct Table<const N: usize>([[i32; N]; N]);
 
 pub trait Write {
     fn write(&mut self, buf: &[u8]) -> Result<usize>;
@@ -53,7 +53,7 @@ fn main() {
     // `*` or `/` means multiply or divide by 2
     stuff::AppVersion::print();
 
-    let input = Option::None;
+    let input = Option::None
     let program = input.unwrap_or_else(|| "+ + * - /");
     let mut accumulator = 0;
 
@@ -70,6 +70,10 @@ fn main() {
     info!("The program \"{}\" calculates the value {}",
              program, accumulator);
 }
+
+//TODO:
+
+let s = "https://www.google.com";
 
 /// Some documentation `with code`
 /// # Heading

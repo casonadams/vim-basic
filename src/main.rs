@@ -66,7 +66,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let c: Template = toml::from_str(&t)?;
 
     tt.add_template("vim", &s)?;
-
+    let i: i32 = 12;
     let rendered = tt.render("vim", &c)?;
     println!("{}", rendered);
 
